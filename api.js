@@ -88,8 +88,9 @@ ToolbarAction.prototype = {
 
     let browser = document.createElementNS(XUL_NS, "browser");
     browser.setAttribute("id", "inner-" + this.id);
-    browser.setAttribute("style", "-moz-appearance: none; overflow: hidden");
+    browser.setAttribute("style", "-moz-appearance: none; overflow: hidden; background: transparent; padding: 0 4px;");
     browser.setAttribute("type", "content");
+    browser.setAttribute("transparent", "true");
     browser.setAttribute("webextension-view-type", "toolbar");
     browser.setAttribute("context", "toolbar-context-menu");
     browser.setAttribute("flex", "1");
