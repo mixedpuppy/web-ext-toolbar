@@ -1,0 +1,10 @@
+{
+  "name": "toolbar sample",
+  "version": "1",
+  "manifest_version": 2,
+  "permissions": ["experiments.toolbar"],
+  "toolbar_action": {
+    "default_panel": "index.html",
+    "default_title": "Example Toolbar"
+  }
+}
