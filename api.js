@@ -176,8 +176,6 @@ ToolbarAction.for = (extension) => {
   return toolbarActionMap.get(extension);
 };
 
-global.toolbarActionFor = ToolbarAction.for;
-
 ExtensionParent.apiManager.on("manifest_toolbar_action", (type, directive, extension, manifest) => {
   let toolbarAction = new ToolbarAction(manifest.toolbar_action, extension);
   toolbarAction.build();
@@ -203,7 +201,7 @@ class API extends ExtensionAPI {
         setPanel(details) {
           let tab = details.tabId !== null ? TabManager.getTab(details.tabId, context) : null;
           let url = details.panel && context.uri.resolve(details.panel);
-          SidebarAction.for(extension).setProperty(tab, "panel", url);
+          ToolbarAction.for(extension).setProperty(tab, "panel", url);
         },
         getPanel(details) {
           let tab = details.tabId !== null ? TabManager.getTab(details.tabId, context) : null;
